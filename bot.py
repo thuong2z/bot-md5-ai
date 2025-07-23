@@ -63,12 +63,21 @@ def start(message):
     username = message.from_user.username or "Người dùng"
     add_user(user_id, username)
 
-    with open("banner.jpg", "rb") as photo:
-        caption = (f"🐰 **BOT PHÂN TÍCH MD5 SIÊU CHUẨN**\n\n"
-                   f"Chào @{username}!\n"
-                   f"💰 Số xu hiện có: {get_balance(user_id)}\n\n"
-                   f"Chọn chức năng bên dưới để sử dụng:")
-        bot.send_photo(user_id, photo, caption, reply_markup=main_menu(user_id in ADMIN_ID))
+    text = (
+        "🐰 **BOT PHÂN TÍCH MD5 SIÊU CHUẨN** 🔮\n\n"
+        "✅ Dự đoán TÀI/XỈU dựa trên thuật toán AI phân tích MD5.\n"
+        "✅ Nạp tiền nhanh – Hỗ trợ 24/7.\n\n"
+        f"👤 **Admin:** Quang Thượng\n"
+        f"💰 **Số xu hiện có:** {get_balance(user_id)}\n\n"
+        "👉 Chọn chức năng bên dưới để tiếp tục."
+    )
+
+    bot.send_message(
+        user_id,
+        text,
+        parse_mode="Markdown",
+        reply_markup=main_menu(user_id in ADMIN_ID)  # Gọi menu chính với nút bấm
+    )
 # ==========================
 # ✅ XỬ LÝ NÚT MENU
 # ==========================
