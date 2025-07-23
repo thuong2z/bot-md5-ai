@@ -63,14 +63,12 @@ def start(message):
     username = message.from_user.username or "Người dùng"
     add_user(user_id, username)
 
-    # Gửi hình minh họa + giới thiệu
-    photo_url = "https://i.ibb.co/fMQnWJd/md5bot.jpg"  # thay link ảnh minh họa bot của bạn
-    caption = (f"🐰 **BOT PHÂN TÍCH MD5 SIÊU CHUẨN**\n\n"
-               f"Chào @{username}!\n"
-               f"💰 Số xu hiện có: {get_balance(user_id)}\n\n"
-               f"Chọn chức năng bên dưới để sử dụng:")
-    bot.send_photo(user_id, photo_url, caption, reply_markup=main_menu(user_id in ADMIN_ID))
-
+    with open("banner.jpg", "rb") as photo:
+        caption = (f"🐰 **BOT PHÂN TÍCH MD5 SIÊU CHUẨN**\n\n"
+                   f"Chào @{username}!\n"
+                   f"💰 Số xu hiện có: {get_balance(user_id)}\n\n"
+                   f"Chọn chức năng bên dưới để sử dụng:")
+        bot.send_photo(user_id, photo, caption, reply_markup=main_menu(user_id in ADMIN_ID))
 # ==========================
 # ✅ XỬ LÝ NÚT MENU
 # ==========================
