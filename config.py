@@ -1,13 +1,10 @@
-TOKEN = "8014506210:AAGt8NMOsVBVfDuRQcUAzJNHLt0BYaSzpjI"  # Thay bằng token @BotFather
-
-ADMIN_ID = [7434281447]  # ID Telegram admin (danh sách)
-
+TOKEN = "8014506210:AAGt8NMOsVBVfDuRQcUAzJNHLt0BYaSzpjI"
+ADMIN_ID = [7434281447]  # ID Telegram của bạn (dạng số)
 BANK_INFO = {
-    "stk": "9704229201867027150",
+    "stk": "123456789",
     "bank": "MB Bank",
-    "name": "BUI TIEN GIAP"
+    "name": "Quang Thuong"
 }
-
-RATE = 2000  # 2000đ = 1 xu
-MIN_NAP = 20000
-MAX_NAP = 1000000
+RATE = 1000        # 1.000 VNĐ = 1 xu
+MIN_NAP = 10000    # Tối thiểu nạp 10k
+MAX_NAP = 1000000  # Tối đa nạp 1 triệu
